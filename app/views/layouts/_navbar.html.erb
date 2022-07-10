@@ -1,5 +1,25 @@
 <nav class="navbar navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Bolsa Laboral Bootcamp</a>
-  </div>
+    <% if empresa_signed_in? %>
+            <div>
+                <p>Bienvenido <%= current_empresa.email %>!!</p>
+                <%= link_to "Cerrar Sesión", destroy_empresa_session_path, method: :delete, class: "btn btn-outline-dark" %>
+            </div>
+        <% elsif persona_signed_in? %>
+            <div>
+                <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %>
+                <%= link_to "Perfil", edit_persona_registration_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Cerrar Sesión", destroy_persona_session_path, method: :delete, class: "btn btn-outline-dark" %>
+            </div>
+        <% else %>
+        <div>
+                <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Registar Empresa", new_empresa_registration_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Registar Persona", new_persona_registration_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Login Empresa", new_empresa_session_path, class: "btn btn-outline-dark" %>
+                <%= link_to "Login Persona", new_persona_session_path, class: "btn btn-outline-dark" %>
+            </div>
+        <% end %>
+    </div>
 </nav>
