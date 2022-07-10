@@ -4,11 +4,11 @@
 
 ## Login Personas
 
-      email: "usuario@dos.cl",
+      email: "usuario@uno.cl",
       password: 123456
 
 ## Login Empresas
-      email: "admin@inacap.cl",
+      email: "admin@aiep.cl",
       password: 123456
 
 
