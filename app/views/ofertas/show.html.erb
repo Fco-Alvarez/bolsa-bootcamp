@@ -36,6 +36,10 @@
   <strong>Modalidad:</strong>
   <%= @oferta.modalidad_id %>
 </p>
+<p>
+  <strong>Region:</strong>
+  <%= @oferta.region_id %>
+</p>
 <% if empresa_signed_in? %> 
 <%= link_to "Editar", edit_oferta_path(@oferta) %>
   |
