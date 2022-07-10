@@ -38,8 +38,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :curriculum %><br />
-    <%= f.text_field :curriculum, autofocus: true, autocomplete: "Cargar CV" %>
+  <%= f.label :curriculum %>
+  <%= f.file_field :curriculum %>
+  
   </div>
 
   <div class="field">
